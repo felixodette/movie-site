@@ -38,6 +38,43 @@ const AddUser = ({ users, onAddUser }) => {
     const { firstName, lastName, username } = user;
     return firstName === '' || lastName === '' || username === '';
   };
+
+  return (
+    <div>
+      <h1>New User</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="Enter First Name"
+            value={user.firstName}
+            onChange={handleInputChange}
+            />
+          <input
+            type="text"
+            name={"lastName"}
+            placeholder={"Enter Last Name"}
+            value={user.lastName}
+            onChange={handleInputChange}
+            />
+          <input
+            type="text"
+            name={"username"}
+            placeholder={"Enter Username"}
+            value={user.username}
+            onChange={handleInputChange}
+            />
+        </div>
+        <button disabled={isDisabled()}>Add User</button>
+      </form>
+      {userExists ? (
+        <p className={"error"}>User already exists.</p>
+      ) : (
+        ''
+      )}
+    </div>
+  );
 };
 
 export default AddUser;
