@@ -17,6 +17,17 @@ const AddUser = ({ users, onAddUser }) => {
     }
     return false;
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const userAlreadyExists = checkUserExists(user.username);
+
+    if (!userAlreadyExists) {
+      onAddUser(user);
+    }
+
+    setUserExists(userAlreadyExists);
+  };
 };
 
 export default AddUser;
