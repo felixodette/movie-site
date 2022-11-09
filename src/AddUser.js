@@ -8,6 +8,15 @@ const AddUser = ({ users, onAddUser }) => {
     lastName: '',
     userName: '',
   });
+
+  const checkUserExists = (currentUsername) => {
+    for (let user of users) {
+      if (user.username === currentUsername) {
+        return true;
+      }
+    }
+    return false;
+  };
 };
 
 export default AddUser;
