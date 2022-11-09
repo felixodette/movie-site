@@ -28,6 +28,11 @@ const AddUser = ({ users, onAddUser }) => {
 
     setUserExists(userAlreadyExists);
   };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUser({ ...user, [name]: value });
+  };
 };
 
 export default AddUser;
