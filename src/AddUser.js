@@ -33,6 +33,11 @@ const AddUser = ({ users, onAddUser }) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
+
+  const isDisabled = () => {
+    const { firstName, lastName, username } = user;
+    return firstName === '' || lastName === '' || username === '';
+  };
 };
 
 export default AddUser;
