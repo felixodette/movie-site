@@ -77,4 +77,9 @@ const AddUser = ({ users, onAddUser }) => {
   );
 };
 
+AddUser.propTypes = {
+  onAddUser: PropTypes.func.isRequired,
+  users: PropTypes.array.isRequired,
+}
+
 export default AddUser;
